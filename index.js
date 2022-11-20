@@ -16,7 +16,7 @@ let plyEl = document.querySelector(".player-el");
 
 let player = {
   name: "",
-  chips:0
+  chips:120
 }
 
 player.name = prompt("Enter player's name: ");
@@ -37,6 +37,7 @@ function startGame() {
 
   playSound("card-drop");
   isAlive = true;
+  hasBlackjack=false;
   firstNumber = getRandomCard();
   secoundNumber = getRandomCard();
   cards = [firstNumber, secoundNumber];
@@ -54,13 +55,13 @@ function renderGame() {
     msg = "You got Blackjack!";
     hasBlackjack=true;
     playSound("won");
-    player.chips+=20;
+//     player.chips+=20;
 
   } else {
     msg = "You are out of the game!";
     isAlive=false;
     playSound("lost");
-    player.chips-=10;
+//     player.chips-=10;
   }
   msgEl.textContent = msg;
   cardEl.textContent = "Cards: ";
@@ -68,12 +69,11 @@ function renderGame() {
     cardEl.textContent += cards[i] + " ";
   }
   sumEl.textContent = "Sum: " + sum;
-  if(player.chips>0){
-    plyEl.textContent=player.name+": $"+player.chips;
-  } else{
-    player.chips=145;
-  }
-
+//   if(player.chips>0){
+//     plyEl.textContent=player.name+": $"+player.chips;
+//   } else{
+//     player.chips=145;
+//   }
 }
 
 function playSound(sound){
