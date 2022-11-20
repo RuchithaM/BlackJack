@@ -31,7 +31,7 @@ document.addEventListener("keypress",function(e){
 })
 
 document.addEventListener("keypress",function(e){
-    if(e.keyCode === 83){
+    if(e.keyCode === 83 || e.keyCode===13){
       console.log("s");
       startGame();
     }
