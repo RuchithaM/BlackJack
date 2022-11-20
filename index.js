@@ -23,6 +23,21 @@ player.name = prompt("Enter player's name: ");
 plyEl.textContent=player.name+": $"+player.chips;
 
 
+document.addEventListener("keypress",function(e){
+    if(e.keyCode === 78){
+       console.log("n");
+      newCard();
+    }
+})
+
+document.addEventListener("keypress",function(e){
+    if(e.keyCode === 83){
+      console.log("s");
+      startGame();
+    }
+})
+
+
 
 
 function getRandomCard() {
